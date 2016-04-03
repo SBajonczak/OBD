@@ -1,0 +1,13 @@
+{
+  "name": "OBDFakeServer",
+  "version": "0.0.0",
+  "description": "OBDFakeServer",
+  "main": "app.js",
+  "author": {
+    "name": "Sascha",
+    "email": ""
+  },
+  "dependencies": {
+    "net": "^1.0.2"
+  }
+}

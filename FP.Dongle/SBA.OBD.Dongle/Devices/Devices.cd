@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FTDISample.Devices.ElmSerial">
+    <Position X="7" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAkggCoAAAhAIAAEAEBJAABAAAAAAQCFAIABEAACA=</HashCode>
+      <FileName>Devices\ElmSerial.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CommunicatorDevice" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FTDISample.Devices.ElmWifi">
+    <Position X="14.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAACgAAAgAAAAEAEAJAAAAAAAAAQCAAIAAAAAAA=</HashCode>
+      <FileName>Devices\ElmWifi.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CommunicatorDevice" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FTDISample.Helpers.SocketCommunicator">
+    <Position X="10.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAACAAAAwAAAAEAAAIAAAAAAAQAQCEAAAAQAAAA=</HashCode>
+      <FileName>Helpers\SocketCommunicator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="UartSample.Devices.IObdDevice">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAgAAAgAAAAEAEAJAAAAAAAAAQCAAIAAAAAAA=</HashCode>
+      <FileName>Devices\IObdDevice.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FTDISample.Helpers.ICommunicator">
+    <Position X="10.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAgAAAAEAAAIAAAAAAAAAQCAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\ICommunicator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

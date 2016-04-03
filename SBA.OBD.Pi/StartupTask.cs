@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Net.Http;
-using Windows.ApplicationModel.Background;
+﻿using Windows.ApplicationModel.Background;
 using SBA.OBD.Dongle.Devices;
 using SBA.OBD.Dongle.Communicator;
 using SBA.OBD.Dongle.Helpers;
 using SBA.OBD.Dongle.Helpers.Enumerations;
 using SBA.ODB.Storage.Storage;
 using SBA.ODB.Storage.Hubs;
-using System.Diagnostics.Tracing;
-
-// The Background Application template is documented at http://go.microsoft.com/fwlink/?LinkID=533884&clcid=0x409
 
 namespace SBA.OBD.Pi
 {
@@ -26,8 +18,6 @@ namespace SBA.OBD.Pi
 
             this.storage = new FileStorage();
             this.elmDevice = new Elm();
-
-            //devdevice = new ElmWifi("192.168.2.147", 36000);
 
             // Local testing
             var communicator = new SocketCommunicator("192.168.2.147", 36000);

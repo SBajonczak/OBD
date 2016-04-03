@@ -114,6 +114,16 @@
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SBA.OBD.Dongle\SBA.OBD.Dongle.csproj">
+      <Project>{ad2ad337-25b6-410b-be94-fd167abe6102}</Project>
+      <Name>SBA.OBD.Dongle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SBA.OBD.Storage\SBA.OBD.Storage.csproj">
+      <Project>{7966168b-6bb2-44fd-90ce-1d61d59f477b}</Project>
+      <Name>SBA.OBD.Storage</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

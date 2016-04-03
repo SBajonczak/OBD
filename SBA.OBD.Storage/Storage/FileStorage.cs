@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
 
-namespace FTDISample.Storage
+namespace SBA.ODB.Storage.Storage
 {
 
     public class FileStorage : IStorage, IDisposable

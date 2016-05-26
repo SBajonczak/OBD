@@ -1,13 +1,14 @@
-﻿using SBA.OBD.Dongle.Helpers.Enumerations;
+﻿using SBA.OBD.Dongle.Decoders;
+using SBA.OBD.Dongle.Helpers.Enumerations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SBA.OBD.Dongle.Helpers
+namespace SBA.OBD.Dongle.Decoders
 {
-    public class ElmDecoder
+    public class ElmDecoder: IDecoder
     {
 
         public int SucessCode { get; private set; }
@@ -20,9 +21,7 @@ namespace SBA.OBD.Dongle.Helpers
 
         public string ResultValue { get; private set; }
 
-        public string DecodedValue { get; private set; }
-
-
+        public string Value { get; private set; }
 
         public bool HasError { get; private set; }
 
@@ -73,13 +72,13 @@ namespace SBA.OBD.Dongle.Helpers
             switch (Pid.GetIntegerValue()){
 
                 case (int)ElmCommands.Mode1COmmands.DistanceTraveledSinceLastReset:
-                    this.DecodedValue= (((Chunks[0].GetIntegerValue() * 256) + Chunks[1].GetIntegerValue())).ToString();
+                    this.Value= (((Chunks[0].GetIntegerValue() * 256) + Chunks[1].GetIntegerValue())).ToString();
                     break;
                 case (int)ElmCommands.Mode1COmmands.DistanceTraveledWithMIL:
-                    this.DecodedValue = (((Chunks[0].GetIntegerValue() * 256) + Chunks[1].GetIntegerValue())).ToString();
+                    this.Value = (((Chunks[0].GetIntegerValue() * 256) + Chunks[1].GetIntegerValue())).ToString();
                     break;
                 case (int)ElmCommands.Mode1COmmands.EngineRPM:
-                    this.DecodedValue = (((Chunks[0].GetIntegerValue() * 256) + Chunks[1].GetIntegerValue()) / 4).ToString();
+                    this.Value = (((Chunks[0].GetIntegerValue() * 256) + Chunks[1].GetIntegerValue()) / 4).ToString();
                     break;
                 case (int)ElmCommands.Mode1COmmands.FuelSystemStatus:
                     break;
@@ -90,7 +89,7 @@ namespace SBA.OBD.Dongle.Helpers
                 case (int)ElmCommands.Mode1COmmands.SupportedPids0To20:
                     break;
                 case (int)ElmCommands.Mode1COmmands.VehicleSpeed:
-                    this.DecodedValue = (Chunks[0].GetIntegerValue()).ToString();
+                    this.Value = (Chunks[0].GetIntegerValue()).ToString();
                     break;
             }
         }

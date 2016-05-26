@@ -35,5 +35,16 @@ namespace SBA.OBD.Dongle.Devices
         {
             get; private set;
         }
+
+
+
+        public override string ToString()
+        {
+            return string.Format("stamp:{3};DeviceID:{2};ODO:{0};ERR:{1}",
+                           this.ODOMeter,
+                           this.ErrorCode,
+                           this.DeviceID,
+                           this.Stamp);
+        }
     }
 }

@@ -1,11 +1,15 @@
 ﻿using SBA.OBD.Dongle.Communicator;
+using SBA.OBD.Dongle.Decoders;
 using SBA.OBD.Dongle.Helpers;
 using System.ComponentModel;
 using System.Threading.Tasks;
 
 namespace SBA.OBD.Dongle.Devices
 {
-
+    /// <summary>
+    /// Represents the ODB device type.
+    /// </summary>
+    /// <remarkt>This is a good way to differ between ELM or an CANBUS.</example>
     public interface IObdDevice: INotifyPropertyChanged
     {
 
@@ -29,7 +33,7 @@ namespace SBA.OBD.Dongle.Devices
         /// Sending the command.
         /// </summary>
         /// <param name="command"></param>
-        Task<ElmDecoder> SendAndReceive(string command);
+        Task<IDecoder> SendAndReceive(string command);
 
         /// <summary>
         /// Get the results

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="SBA.OBD.Dongle.Communicator.ICommunicator">
+    <Position X="17.25" Y="3" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAABAAAAAQIAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Dongle\Communicator\ICommunicator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SBA.OBD.Dongle.Devices.IObdDevice">
+    <Position X="14" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAgAAAoABAAAAEQJAAAAAAAAAQCAAIAAAAAAA=</HashCode>
+      <FileName>Dongle\Interfaces\IObdDevice.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CommunicatorDevice" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="SBA.OBD.Dongle.Decoders.IDecoder">
+    <Position X="11.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAACAAAAAAAAAAAIAAAgAAAAAAA=</HashCode>
+      <FileName>Dongle\Decoders\IDecoder.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

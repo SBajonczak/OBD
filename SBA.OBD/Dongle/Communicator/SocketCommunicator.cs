@@ -106,6 +106,7 @@ namespace SBA.OBD.Dongle.Communicator
             }
             catch (Exception e)
             {
+
                 if (e.Message.Contains("An existing connection was forcibly closed by the remote host."))
                 {
                     this.IsConnected = false;

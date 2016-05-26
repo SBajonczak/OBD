@@ -1,4 +1,5 @@
 ﻿using SBA.OBD.Dongle.Communicator;
+using SBA.OBD.Dongle.Decoders;
 using SBA.OBD.Dongle.Helpers;
 using SBA.OBD.Dongle.Helpers.Enumerations;
 using System;
@@ -6,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace SBA.OBD.Dongle.Devices
 {
+
+    /// <summary>
+    /// 
+    /// </summary>
     public class Elm:BaseObject, IObdDevice
     {
 
@@ -21,7 +26,11 @@ namespace SBA.OBD.Dongle.Devices
         /// </summary>
         public bool IsConnected
         {
-            get; private set;
+            get {
+                return this.CommunicatorDevice.IsConnected;
+            }
+
+
         }
 
         public bool IsReady
@@ -55,7 +64,7 @@ namespace SBA.OBD.Dongle.Devices
         }
 
 
-        public async Task<ElmDecoder> SendAndReceive(string command)
+        public async Task<IDecoder> SendAndReceive(string command)
         {
             try
             {
@@ -68,7 +77,7 @@ namespace SBA.OBD.Dongle.Devices
             }
             finally
             {
-                this.IsConnected = this.CommunicatorDevice.IsConnected;
+                this.OnPropertyChanged("IsConnected");
             }
             return new ElmDecoder("");
         }
@@ -97,12 +106,10 @@ namespace SBA.OBD.Dongle.Devices
 
         public async Task Connect()
         {
-            this.IsConnected = false;
             try
             {
                 await this.CommunicatorDevice.Connect();
                 //Set state to connected
-                this.IsConnected = this.CommunicatorDevice.IsConnected;
                 OnPropertyChanged("IsConnected");
             }
             catch (Exception)

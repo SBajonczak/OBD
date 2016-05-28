@@ -13,8 +13,14 @@ namespace SBA.OBD.ViewModels
         /// <summary>
         /// The ODO Meter
         /// </summary>
-        public string ODO { get; set; }
+        public string ODO { get { return _odo; } set
+            {
+                _odo = value;
+                OnPropertyChanged("ODO");
+            }
+        }
 
+        private string _odo;
 
         public bool Mil { get; set; }
 
@@ -27,7 +33,7 @@ namespace SBA.OBD.ViewModels
             executor = new ODBExecutor();
 
             this.Tmr = new DispatcherTimer();
-            Tmr.Interval = new TimeSpan(0, 0, 0, 0, 500);
+            Tmr.Interval = new TimeSpan(0, 0, 0, 2);
             Tmr.Tick += TimerElapsed;
             Tmr.Start();
         }
@@ -38,7 +44,6 @@ namespace SBA.OBD.ViewModels
             {
                 executor.Execute();
                 this.ODO = executor.ODO;
-                this.OnPropertyChanged("ODO");
 
             }
         }

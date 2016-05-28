@@ -40,11 +40,7 @@ namespace SBA.OBD.Dongle.Devices
 
         public override string ToString()
         {
-            return string.Format("stamp:{3};DeviceID:{2};ODO:{0};ERR:{1}",
-                           this.ODOMeter,
-                           this.ErrorCode,
-                           this.DeviceID,
-                           this.Stamp);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using SBA.OBD.Dongle.Communicator;
+﻿using Microsoft.ApplicationInsights;
+using SBA.OBD.Dongle.Communicator;
 using SBA.OBD.Dongle.Decoders;
 using SBA.OBD.Dongle.Helpers;
 using SBA.OBD.Dongle.Helpers.Enumerations;
@@ -9,17 +10,11 @@ namespace SBA.OBD.Dongle.Devices
 {
 
     /// <summary>
-    /// 
+    /// An ELM interface.
     /// </summary>
     public class Elm:BaseObject, IObdDevice
     {
-
-        /// <summary>
-        /// Letztes Ergebnis.
-        /// </summary>
-        private string Lastresponse;
-
-        public event AfterResultReceivedDelegate AfterResultReceived;
+        TelemetryClient TelemetryClient;
 
         /// <summary>
         /// Ist aktuell verbunden?
@@ -61,6 +56,7 @@ namespace SBA.OBD.Dongle.Devices
 
         public Elm()
         {
+            this.TelemetryClient = new TelemetryClient();
         }
 
 
@@ -72,8 +68,9 @@ namespace SBA.OBD.Dongle.Devices
                 string result = await this.CommunicatorDevice.SendAndReceive(command);
                 return new ElmDecoder(result);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                TelemetryClient.TrackException(ex);
             }
             finally
             {
@@ -112,8 +109,9 @@ namespace SBA.OBD.Dongle.Devices
                 //Set state to connected
                 OnPropertyChanged("IsConnected");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                TelemetryClient.TrackException(ex);
             }
         }
 

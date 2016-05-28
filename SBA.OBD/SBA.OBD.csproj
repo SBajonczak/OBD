@@ -119,6 +119,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ODBExecutor.cs" />
+    <Compile Include="Storage\Hubs\AzureIoTHub.cs" />
+    <Compile Include="Storage\IStorage.cs" />
+    <Compile Include="Storage\FileStorage.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +131,7 @@
     <None Include="SBA.OBD_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="OBDFakeServer.sln" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -136,12 +140,6 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SBA.OBD.Storage\SBA.OBD.Storage.csproj">
-      <Project>{7966168B-6BB2-44FD-90CE-1D61D59F477B}</Project>
-      <Name>SBA.OBD.Storage</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

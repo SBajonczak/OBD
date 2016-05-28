@@ -24,11 +24,7 @@ namespace SBA.OBD.Dongle.Devices
         /// <param name="communicator"></param>
         void SetCommicatorDevice(ICommunicator communicator);
 
-        /// <summary>
-        /// When command was received
-        /// </summary>
-        event AfterResultReceivedDelegate AfterResultReceived;
-
+    
         /// <summary>
         /// Sending the command.
         /// </summary>

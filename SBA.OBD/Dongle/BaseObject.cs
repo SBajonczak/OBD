@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace SBA.OBD.Dongle
@@ -11,11 +12,14 @@ namespace SBA.OBD.Dongle
         {
             try
             {
-                if (PropertyChanged.Target==null)
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+                if (PropertyChanged!= null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                }
             }
             catch
             {
+
             }
         }
 

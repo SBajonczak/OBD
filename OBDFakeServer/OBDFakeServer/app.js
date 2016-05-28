@@ -58,7 +58,9 @@ function receiveData(data) {
             segment2 = Math.floor(Math.random() * 255);
             result = "41 31 " + getHex(segment1) + " " + getHex(segment2);
             break;
-        default:
+		case "ATZ0131":
+			result= "00";
+		default:
 			console.log("ERROR");
 			break;
 	}

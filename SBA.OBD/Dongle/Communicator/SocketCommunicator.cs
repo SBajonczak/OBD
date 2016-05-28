@@ -68,7 +68,10 @@ namespace SBA.OBD.Dongle.Communicator
         }
 
 
-
+        /// <summary>
+        /// Receive data from the stream.
+        /// </summary>
+        /// <returns></returns>
         private async Task<string> Receive()
         {
             DataReader reader = new DataReader(clientSocket.InputStream);
@@ -81,8 +84,6 @@ namespace SBA.OBD.Dongle.Communicator
                 if (bytesAvailable > 0)
                     return reader.ReadString(bytesAvailable);
             }
-            return string.Empty;
-            
         }
 
         private async void Send(string data)
